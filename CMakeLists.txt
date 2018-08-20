@@ -13,4 +13,4 @@ target_link_libraries(ch4_editline_win.x edit)
 add_executable(strstr.x strstr.c)
 
 add_executable(parser.x parser.c mpc.c)
-target_link_libraries(parser.x edit)
+target_link_libraries(parser.x edit m)
