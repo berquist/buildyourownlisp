@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
       ",
       Number, Operator, Expr, Lispy);
 
-    puts("Lispy Version 0.0.0.0.1");
+    puts("Lispy Version 0.0.0.0.2");
     puts("Press Ctrl+c to Exit\n");
 
     while (1) {
@@ -59,7 +59,13 @@ int main(int argc, char** argv) {
         /* Attempt to parse the user input */
         mpc_result_t r;
         if (mpc_parse("<stdin>", input, Lispy, &r)) {
+            /* On success print the AST */
+            mpc_ast_print(r.output);
+            mpc_ast_delete(r.output);
         } else {
+            /* Otherwise print the error */
+            mpc_err_print(r.error);
+            mpc_err_delete(r.error);
         }
 
         free(input);
