@@ -1,7 +1,9 @@
 #include <stdio.h>
 
+#define BUFSIZ_ 2048
+
 /* Declare a buffer for user input of size 2048 */
-static char input[2048];
+static char input[BUFSIZ_];
 
 int main(int argc, char** argv) {
 
@@ -16,7 +18,7 @@ int main(int argc, char** argv) {
         fputs("lispy> ", stdout);
 
         /* Read a line of user input of maximum size 2048 */
-        fgets(input, 2048, stdin);
+        fgets(input, BUFSIZ_, stdin);
 
         /* Echo input back to user */
         printf("No you're a %s", input);
