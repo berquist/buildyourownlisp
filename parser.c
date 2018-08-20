@@ -63,8 +63,6 @@ long eval_op(long x, char* op, long y) {
 
 long eval(mpc_ast_t* t) {
     /* If tagged as number return it directly */
-    /* Shouldn't this be strcmp? No, because 'expr|number|regex' is
-     * the tag for a number no matter what. */
     if (strstr(t->tag, "number")) {
         return atoi(t->contents);
     }
@@ -112,23 +110,9 @@ int main(int argc, char** argv) {
         char* input = readline("lispy> ");
         add_history(input);
 
-        /* printf("No you're a %s\n", input); */
-
         /* Attempt to parse the user input */
         mpc_result_t r;
         if (mpc_parse("<stdin>", input, Lispy, &r)) {
-            /* On success print the AST */
-            /* mpc_ast_print(r.output); */
-            /* mpc_ast_t* a = r.output; */
-            /* printf("Tag: %s\n", a->tag); */
-            /* printf("Contents: %s\n", a->contents); */
-            /* printf("Number of children: %i\n", a->children_num); */
-            /* if (a->children_num > 0) { */
-            /*     mpc_ast_t* c0 = a->children[0]; */
-            /*     printf("First Child Tag: %s\n", c0->tag); */
-            /*     printf("First Child Contents: %s\n", c0->contents); */
-            /*     printf("First Child Number of children: %i\n", c0->children_num); */
-            /* } */
             long result = eval(r.output);
             printf("%li\n", result);
             mpc_ast_delete(r.output);
