@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include <editline/readline.h>
-/* #include <editline/history.h> */
 
 #define BUFSIZ_ 2048
 
