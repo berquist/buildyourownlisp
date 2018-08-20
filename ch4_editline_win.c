@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 /* If we are compiling on Windows compile these functions */
-#ifdef _WIN32
+#if defined(_WIN32)
 #include <string.h>
 
 #define BUFSIZ_ 2048
