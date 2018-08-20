@@ -1,3 +1,9 @@
+# Executables and build products
+*.x
+build/
+
+### C
+
 # Prerequisites
 *.d
 
