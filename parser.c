@@ -164,7 +164,7 @@ int main(int argc, char** argv) {
         symbol   : '+' | '-' | '*' | '/' | '%' | '^' | \"min\" | \"max\" ; \
         sexpr    : '(' <expr>* ')' ;                                       \
         expr     : <number> | <symbol> | <sexpr> ;                         \
-        lispy    : /^/ <expr>+ /$/ ;                                       \
+        lispy    : /^/ <expr>* /$/ ;                                       \
       ",
             Number, Symbol, Sexpr, Expr, Lispy);
 
