@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
+project(buildyourownlisp)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -pedantic")
 
